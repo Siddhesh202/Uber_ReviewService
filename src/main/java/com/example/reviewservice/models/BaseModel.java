@@ -11,7 +11,7 @@ import java.util.Date;
 @MappedSuperclass
 public abstract class BaseModel {
     @Id  // This annotation makes the id a primary key of our table
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // Identity means auto increment
+    @GeneratedValue(strategy = GenerationType.TABLE)  // Identity means auto increment
     protected Long id;
 
     @Column(nullable = false)
