@@ -22,19 +22,20 @@ public class ReviewService implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("****************");
-        Review r = Review
-                .builder()
-                .content("Amazing Ride Quality")
-                .rating(5.0)
-                .build(); // Code to create plain java object
-
-        Booking b = Booking
-                .builder()
-                .review(r)
-                .endTime(new Date())
-                .build();
-
-        // reviewRepository.save(r); // this code executes sql query
-        bookingRepository.save(b);
+//        Review r = Review
+//                .builder()
+//                .content("Amazing Ride Quality")
+//                .rating(5.0)
+//                .build(); // Code to create plain java object
+//
+//        Booking b = Booking
+//                .builder()
+//                .review(r)
+//                .endTime(new Date())
+//                .build();
+//
+//        // reviewRepository.save(r); // this code executes sql query
+//        bookingRepository.save(b);
+        
     }
 }

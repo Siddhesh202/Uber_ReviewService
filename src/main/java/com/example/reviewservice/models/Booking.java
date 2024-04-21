@@ -16,13 +16,13 @@ import java.util.List;
 public class Booking extends BaseModel {
 
     // Whenever you try to associate an entity as a composition you have to specify a mapping
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     private Review review;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Driver driver;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Passenger passenger;
 
     @Enumerated(EnumType.STRING)

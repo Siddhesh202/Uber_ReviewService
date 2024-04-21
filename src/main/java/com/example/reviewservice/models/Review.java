@@ -8,11 +8,11 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.util.Date;
 
-@Getter
 @Setter
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Getter
 @Entity
 @Table(name = "booking_review")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -23,4 +23,7 @@ public class Review extends BaseModel{
 
     private Double rating;
 
+//    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+//    @JoinColumn(nullable = false)
+//    private Booking booking; // we have defined a 1:1 relationship between booking and review
 }
