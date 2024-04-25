@@ -1,8 +1,11 @@
 package com.example.reviewservice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.websocket.server.ServerEndpoint;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.Date;
 import java.util.List;
@@ -14,10 +17,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Booking extends BaseModel {
-
-    // Whenever you try to associate an entity as a composition you have to specify a mapping
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.LAZY)
-    private Review review;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Driver driver;

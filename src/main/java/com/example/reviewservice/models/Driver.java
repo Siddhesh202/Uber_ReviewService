@@ -1,5 +1,6 @@
 package com.example.reviewservice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -19,6 +20,7 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","bookings"})
 public class Driver extends BaseModel{
     private String name;
 
@@ -27,7 +29,7 @@ public class Driver extends BaseModel{
 
     private String phoneNumber;
 
-    private String address;
+//    private String address;
 
     // 1 : N association
     // 1 Driver has many bookings
